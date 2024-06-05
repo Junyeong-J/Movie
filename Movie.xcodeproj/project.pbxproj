@@ -18,6 +18,8 @@
 		72D60B922C10B89200B697D2 /* Label+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D60B912C10B89200B697D2 /* Label+Extension.swift */; };
 		72D60B952C10BC0D00B697D2 /* TextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D60B942C10BC0C00B697D2 /* TextField+Extension.swift */; };
 		72D60B972C10BF9400B697D2 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 72D60B962C10BF9400B697D2 /* .gitignore */; };
+		72D60B9A2C10C06E00B697D2 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D60B992C10C06E00B697D2 /* APIKey.swift */; };
+		72D60B9D2C10C2F500B697D2 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 72D60B9C2C10C2F500B697D2 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,7 @@
 		72D60B912C10B89200B697D2 /* Label+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Label+Extension.swift"; sourceTree = "<group>"; };
 		72D60B942C10BC0C00B697D2 /* TextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Extension.swift"; sourceTree = "<group>"; };
 		72D60B962C10BF9400B697D2 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		72D60B992C10C06E00B697D2 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +44,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72D60B552C0EFE9E00B697D2 /* SnapKit in Frameworks */,
+				72D60B9D2C10C2F500B697D2 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +78,7 @@
 				72D60B462C0EFAAE00B697D2 /* Assets.xcassets */,
 				72D60B482C0EFAAE00B697D2 /* LaunchScreen.storyboard */,
 				72D60B4B2C0EFAAE00B697D2 /* Info.plist */,
+				72D60B992C10C06E00B697D2 /* APIKey.swift */,
 			);
 			path = Movie;
 			sourceTree = "<group>";
@@ -115,6 +120,7 @@
 			name = Movie;
 			packageProductDependencies = (
 				72D60B542C0EFE9E00B697D2 /* SnapKit */,
+				72D60B9C2C10C2F500B697D2 /* Alamofire */,
 			);
 			productName = Movie;
 			productReference = 72D60B3A2C0EFAAD00B697D2 /* Movie.app */;
@@ -146,6 +152,7 @@
 			mainGroup = 72D60B312C0EFAAD00B697D2;
 			packageReferences = (
 				72D60B532C0EFE9E00B697D2 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				72D60B9B2C10C2F500B697D2 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 72D60B3B2C0EFAAD00B697D2 /* Products */;
 			projectDirPath = "";
@@ -176,6 +183,7 @@
 			files = (
 				72D60B8F2C10431500B697D2 /* LottoViewController.swift in Sources */,
 				72D60B3E2C0EFAAD00B697D2 /* AppDelegate.swift in Sources */,
+				72D60B9A2C10C06E00B697D2 /* APIKey.swift in Sources */,
 				72D60B402C0EFAAD00B697D2 /* SceneDelegate.swift in Sources */,
 				72D60B572C0F408100B697D2 /* JoinViewController.swift in Sources */,
 				72D60B952C10BC0D00B697D2 /* TextField+Extension.swift in Sources */,
@@ -417,6 +425,14 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		72D60B9B2C10C2F500B697D2 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -424,6 +440,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 72D60B532C0EFE9E00B697D2 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		72D60B9C2C10C2F500B697D2 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 72D60B9B2C10C2F500B697D2 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -7,6 +7,20 @@
 
 import UIKit
 import SnapKit
+import Alamofire
+
+struct Lotto: Decodable {
+    
+    let drwNoDate: String
+    let drwtNo1: Int
+    let drwtNo2: Int
+    let drwtNo3: Int
+    let drwtNo4: Int
+    let drwtNo5: Int
+    let drwtNo6: Int
+    let bnusNo: Int
+    
+}
 
 class LottoViewController: UIViewController {
     
@@ -36,6 +50,8 @@ class LottoViewController: UIViewController {
         configureHierarchy()
         configureLayout()
         configureUI()
+        callRequest(num: 1100)
+        createPickerView()
     }
     
 }
@@ -57,6 +73,15 @@ extension LottoViewController {
         numberView.addSubview(plusLabel)
         numberView.addSubview(bonusNumberLabel)
         view.addSubview(bonusLabel)
+    }
+    
+    func createPickerView() {
+        
+        let pickerView = UIPickerView()
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        
+        textField.inputView = pickerView
     }
     
     func configureLayout(){
@@ -153,6 +178,8 @@ extension LottoViewController {
         
         view.backgroundColor = .white
         
+        textField.textColor = .black
+        
         textField.setUITextField(backgroundColor: .white, borderStyle: .line, placeholder: "회차를 고르세요", tintColor: .black, textAlignment: .center)
         
         infoLabel.setUILabel("당첨번호 안내", textAlignment: .left, color: .black, backgroundColor: .clear, font: .systemFont(ofSize: 17), cornerRadius: 0)
@@ -161,7 +188,7 @@ extension LottoViewController {
         
         lineView.backgroundColor = .black
         
-        resultLabel.setUILabel("당첨결과", textAlignment: .center, color: .black, backgroundColor: .clear, font: .systemFont(ofSize: 20), cornerRadius: 0)
+        resultLabel.setUILabel("211회 당첨결과", textAlignment: .center, color: .orange, backgroundColor: .clear, font: .boldSystemFont(ofSize: 22), cornerRadius: 0)
         
         numberView.backgroundColor = .clear
         
@@ -183,26 +210,88 @@ extension LottoViewController {
         
         bonusLabel.setUILabel("보너스", textAlignment: .center, color: .lightGray, backgroundColor: .clear, font: .systemFont(ofSize: 13), cornerRadius: 0)
     }
-}
-
-#if DEBUG
-
-import SwiftUI
-
-struct ViewControllerPresentable: UIViewControllerRepresentable{
-    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
+    
+    func callRequest(num: Int) {
+        let url = "\(APIURL.lottoURL)\(num)"
+        AF.request(url).responseDecodable(of: Lotto.self) { response in
+            switch response.result{
+            case .success(let value):
+                self.setData(data: value)
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func setData(data: Lotto) {
+        
+        dateLabel.text = "\(data.drwNoDate) 추첨"
+        
+        resultLabel.text = "\(textField.text!)회 당첨결과"
+        
+        let attributeString = NSMutableAttributedString(string: resultLabel.text!)
+        attributeString.addAttribute(.foregroundColor, value: UIColor.black, range: (resultLabel.text! as NSString).range(of: "당첨결과"))
+        self.resultLabel.attributedText = attributeString
+        
+        firstNumberLabel.text = String(data.drwtNo1)
+        firstNumberLabel.backgroundColor = colorForNumber(data.drwtNo1)
+        
+        secondNumberLabel.text = String(data.drwtNo2)
+        secondNumberLabel.backgroundColor = colorForNumber(data.drwtNo2)
+        
+        thirdNumberLabel.text = String(data.drwtNo3)
+        thirdNumberLabel.backgroundColor = colorForNumber(data.drwtNo3)
+        
+        fourthNumberLabel.text = String(data.drwtNo4)
+        fourthNumberLabel.backgroundColor = colorForNumber(data.drwtNo4)
+        
+        fifthNumberLabel.text = String(data.drwtNo5)
+        fifthNumberLabel.backgroundColor = colorForNumber(data.drwtNo5)
+        
+        sixthNumberLabel.text = String(data.drwtNo6)
+        sixthNumberLabel.backgroundColor = colorForNumber(data.drwtNo6)
+        
+        bonusNumberLabel.text = String(data.bnusNo)
+        bonusNumberLabel.backgroundColor = colorForNumber(data.bnusNo)
         
     }
     
-    func makeUIViewController(context: Context) -> some UIViewController {
-        LottoViewController()
+    func colorForNumber(_ number: Int) -> UIColor {
+        switch number {
+        case 1...10:
+            return #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
+        case 11...20:
+            return #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
+        case 21...30:
+            return #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+        case 31...40:
+            return #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+        case 41...45:
+            return #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+        default:
+            return UIColor.black
+        }
     }
 }
 
-struct ViewControllerPrepresentable_PreviewProvider : PreviewProvider{
-    static var previews: some View{
-        ViewControllerPresentable()
+extension LottoViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 1100
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return "\(1100 - row)"
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let selectedNumber = 1100 - row
+        textField.text = "\(selectedNumber)"
+        callRequest(num: selectedNumber)
+        
     }
 }
-
-#endif

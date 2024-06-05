@@ -15,6 +15,9 @@ extension UITextField {
         self.placeholder = placeholder
         self.tintColor = tintColor
         self.textAlignment = textAlignment
+        self.layer.borderWidth = 1.0
+        self.layer.borderColor = UIColor.gray.cgColor
+        self.textColor = .black
     }
     
 }
