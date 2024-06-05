@@ -14,6 +14,10 @@
 		72D60B522C0EFCDF00B697D2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D60B512C0EFCDF00B697D2 /* MainViewController.swift */; };
 		72D60B552C0EFE9E00B697D2 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 72D60B542C0EFE9E00B697D2 /* SnapKit */; };
 		72D60B572C0F408100B697D2 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D60B562C0F408100B697D2 /* JoinViewController.swift */; };
+		72D60B8F2C10431500B697D2 /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D60B8E2C10431500B697D2 /* LottoViewController.swift */; };
+		72D60B922C10B89200B697D2 /* Label+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D60B912C10B89200B697D2 /* Label+Extension.swift */; };
+		72D60B952C10BC0D00B697D2 /* TextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D60B942C10BC0C00B697D2 /* TextField+Extension.swift */; };
+		72D60B972C10BF9400B697D2 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 72D60B962C10BF9400B697D2 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +29,10 @@
 		72D60B4B2C0EFAAE00B697D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72D60B512C0EFCDF00B697D2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		72D60B562C0F408100B697D2 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
+		72D60B8E2C10431500B697D2 /* LottoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewController.swift; sourceTree = "<group>"; };
+		72D60B912C10B89200B697D2 /* Label+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Label+Extension.swift"; sourceTree = "<group>"; };
+		72D60B942C10BC0C00B697D2 /* TextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Extension.swift"; sourceTree = "<group>"; };
+		72D60B962C10BF9400B697D2 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +50,7 @@
 		72D60B312C0EFAAD00B697D2 = {
 			isa = PBXGroup;
 			children = (
+				72D60B962C10BF9400B697D2 /* .gitignore */,
 				72D60B3C2C0EFAAD00B697D2 /* Movie */,
 				72D60B3B2C0EFAAD00B697D2 /* Products */,
 			);
@@ -58,15 +67,34 @@
 		72D60B3C2C0EFAAD00B697D2 /* Movie */ = {
 			isa = PBXGroup;
 			children = (
+				72D60B932C10B89700B697D2 /* Extension */,
+				72D60B902C10431B00B697D2 /* ViewController */,
 				72D60B3D2C0EFAAD00B697D2 /* AppDelegate.swift */,
 				72D60B3F2C0EFAAD00B697D2 /* SceneDelegate.swift */,
-				72D60B512C0EFCDF00B697D2 /* MainViewController.swift */,
-				72D60B562C0F408100B697D2 /* JoinViewController.swift */,
 				72D60B462C0EFAAE00B697D2 /* Assets.xcassets */,
 				72D60B482C0EFAAE00B697D2 /* LaunchScreen.storyboard */,
 				72D60B4B2C0EFAAE00B697D2 /* Info.plist */,
 			);
 			path = Movie;
+			sourceTree = "<group>";
+		};
+		72D60B902C10431B00B697D2 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				72D60B512C0EFCDF00B697D2 /* MainViewController.swift */,
+				72D60B562C0F408100B697D2 /* JoinViewController.swift */,
+				72D60B8E2C10431500B697D2 /* LottoViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		72D60B932C10B89700B697D2 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				72D60B912C10B89200B697D2 /* Label+Extension.swift */,
+				72D60B942C10BC0C00B697D2 /* TextField+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72D60B472C0EFAAE00B697D2 /* Assets.xcassets in Resources */,
+				72D60B972C10BF9400B697D2 /* .gitignore in Resources */,
 				72D60B4A2C0EFAAE00B697D2 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,9 +174,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72D60B8F2C10431500B697D2 /* LottoViewController.swift in Sources */,
 				72D60B3E2C0EFAAD00B697D2 /* AppDelegate.swift in Sources */,
 				72D60B402C0EFAAD00B697D2 /* SceneDelegate.swift in Sources */,
 				72D60B572C0F408100B697D2 /* JoinViewController.swift in Sources */,
+				72D60B952C10BC0D00B697D2 /* TextField+Extension.swift in Sources */,
+				72D60B922C10B89200B697D2 /* Label+Extension.swift in Sources */,
 				72D60B522C0EFCDF00B697D2 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
