@@ -20,6 +20,10 @@
 		72D60B972C10BF9400B697D2 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 72D60B962C10BF9400B697D2 /* .gitignore */; };
 		72D60B9A2C10C06E00B697D2 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D60B992C10C06E00B697D2 /* APIKey.swift */; };
 		72D60B9D2C10C2F500B697D2 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 72D60B9C2C10C2F500B697D2 /* Alamofire */; };
+		72D60B9F2C12B72300B697D2 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D60B9E2C12B72300B697D2 /* MovieViewController.swift */; };
+		72D60BA22C12BD4200B697D2 /* ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D60BA12C12BD4200B697D2 /* ReuseIdentifierProtocol.swift */; };
+		72D60BA52C12BD9D00B697D2 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D60BA42C12BD9D00B697D2 /* MovieTableViewCell.swift */; };
+		72D60BA72C12CDCB00B697D2 /* Button+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D60BA62C12CDCB00B697D2 /* Button+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +40,10 @@
 		72D60B942C10BC0C00B697D2 /* TextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Extension.swift"; sourceTree = "<group>"; };
 		72D60B962C10BF9400B697D2 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		72D60B992C10C06E00B697D2 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		72D60B9E2C12B72300B697D2 /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
+		72D60BA12C12BD4200B697D2 /* ReuseIdentifierProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifierProtocol.swift; sourceTree = "<group>"; };
+		72D60BA42C12BD9D00B697D2 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
+		72D60BA62C12CDCB00B697D2 /* Button+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +79,10 @@
 		72D60B3C2C0EFAAD00B697D2 /* Movie */ = {
 			isa = PBXGroup;
 			children = (
+				72D60BA02C12BD2E00B697D2 /* Protocol */,
 				72D60B932C10B89700B697D2 /* Extension */,
 				72D60B902C10431B00B697D2 /* ViewController */,
+				72D60BA32C12BD5B00B697D2 /* Cell */,
 				72D60B3D2C0EFAAD00B697D2 /* AppDelegate.swift */,
 				72D60B3F2C0EFAAD00B697D2 /* SceneDelegate.swift */,
 				72D60B462C0EFAAE00B697D2 /* Assets.xcassets */,
@@ -89,6 +99,7 @@
 				72D60B512C0EFCDF00B697D2 /* MainViewController.swift */,
 				72D60B562C0F408100B697D2 /* JoinViewController.swift */,
 				72D60B8E2C10431500B697D2 /* LottoViewController.swift */,
+				72D60B9E2C12B72300B697D2 /* MovieViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -98,8 +109,25 @@
 			children = (
 				72D60B912C10B89200B697D2 /* Label+Extension.swift */,
 				72D60B942C10BC0C00B697D2 /* TextField+Extension.swift */,
+				72D60BA62C12CDCB00B697D2 /* Button+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		72D60BA02C12BD2E00B697D2 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				72D60BA12C12BD4200B697D2 /* ReuseIdentifierProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		72D60BA32C12BD5B00B697D2 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				72D60BA42C12BD9D00B697D2 /* MovieTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,8 +214,12 @@
 				72D60B9A2C10C06E00B697D2 /* APIKey.swift in Sources */,
 				72D60B402C0EFAAD00B697D2 /* SceneDelegate.swift in Sources */,
 				72D60B572C0F408100B697D2 /* JoinViewController.swift in Sources */,
+				72D60BA72C12CDCB00B697D2 /* Button+Extension.swift in Sources */,
+				72D60BA22C12BD4200B697D2 /* ReuseIdentifierProtocol.swift in Sources */,
+				72D60B9F2C12B72300B697D2 /* MovieViewController.swift in Sources */,
 				72D60B952C10BC0D00B697D2 /* TextField+Extension.swift in Sources */,
 				72D60B922C10B89200B697D2 /* Label+Extension.swift in Sources */,
+				72D60BA52C12BD9D00B697D2 /* MovieTableViewCell.swift in Sources */,
 				72D60B522C0EFCDF00B697D2 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

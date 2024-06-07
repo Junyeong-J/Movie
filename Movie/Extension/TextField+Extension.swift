@@ -9,15 +9,15 @@ import UIKit
 
 extension UITextField {
     
-    func setUITextField(backgroundColor: UIColor, borderStyle: UITextField.BorderStyle, placeholder: String, tintColor: UIColor, textAlignment: NSTextAlignment) {
+    func setUITextField(backgroundColor: UIColor, borderStyle: UITextField.BorderStyle, placeholder: String, tintColor: UIColor, textAlignment: NSTextAlignment, borderWidth: Double, borderColor: CGColor, textColor: UIColor) {
         self.backgroundColor = backgroundColor
         self.borderStyle = borderStyle
         self.placeholder = placeholder
         self.tintColor = tintColor
         self.textAlignment = textAlignment
-        self.layer.borderWidth = 1.0
-        self.layer.borderColor = UIColor.gray.cgColor
-        self.textColor = .black
+        self.layer.borderWidth = borderWidth
+        self.layer.borderColor = borderColor
+        self.textColor = textColor
     }
     
 }

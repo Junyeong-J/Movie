@@ -180,7 +180,7 @@ extension LottoViewController {
         
         textField.textColor = .black
         
-        textField.setUITextField(backgroundColor: .white, borderStyle: .line, placeholder: "회차를 고르세요", tintColor: .black, textAlignment: .center)
+        textField.setUITextField(backgroundColor: .white, borderStyle: .line, placeholder: "회차를 고르세요", tintColor: .black, textAlignment: .center, borderWidth: 1.0, borderColor: UIColor.gray.cgColor, textColor: .black)
         
         infoLabel.setUILabel("당첨번호 안내", textAlignment: .left, color: .black, backgroundColor: .clear, font: .systemFont(ofSize: 17), cornerRadius: 0)
         
