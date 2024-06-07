@@ -50,8 +50,9 @@ class LottoViewController: UIViewController {
         configureHierarchy()
         configureLayout()
         configureUI()
-        callRequest(num: 1100)
+        callRequest(num: 1122)
         createPickerView()
+        
     }
     
 }
@@ -76,6 +77,8 @@ extension LottoViewController {
     }
     
     func createPickerView() {
+        
+        textField.text = "1122"
         
         let pickerView = UIPickerView()
         pickerView.delegate = self
@@ -217,7 +220,6 @@ extension LottoViewController {
             switch response.result{
             case .success(let value):
                 self.setData(data: value)
-                
             case .failure(let error):
                 print(error)
             }
@@ -281,15 +283,15 @@ extension LottoViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 1100
+        return 1122
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "\(1100 - row)"
+        return "\(1122 - row)"
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let selectedNumber = 1100 - row
+        let selectedNumber = 1122 - row
         textField.text = "\(selectedNumber)"
         callRequest(num: selectedNumber)
         
